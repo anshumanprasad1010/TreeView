@@ -15,9 +15,9 @@ const App: React.FC = () => {
           if(e.target && typeof e.target.result === 'string')
           {
           const data = JSON.parse(e.target.result);
+          setJsonData(data);
           const response = await axios.post('http://localhost:5000/data', data); 
           console.log(response);         
-          setJsonData(data);
         }
         } catch (error) {
           console.error('Error storing JSON:', error);
