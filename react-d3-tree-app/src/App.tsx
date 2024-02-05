@@ -16,7 +16,7 @@ const App: React.FC = () => {
           {
           const data = JSON.parse(e.target.result);
           setJsonData(data);
-          const response = await axios.post('http://localhost:5000/data', data); 
+          const response = await axios.post('https://treeview-pcif.onrender.com/data', data); 
           console.log(response);         
         }
         } catch (error) {
