@@ -6,7 +6,8 @@ import axios from 'axios';
 
 const App: React.FC = () => {
 
-  const [jsonData, setJsonData] = useState<any|null>([]);
+  const [jsonData, setJsonData] = useState<any|null>(null);
+  const [view, setInputValue] = useState(true);
 
      const handleFileUpload = (file: File) => {
       const reader = new FileReader();
@@ -16,6 +17,7 @@ const App: React.FC = () => {
           {
           const data = JSON.parse(e.target.result);
           setJsonData(data);
+          setInputValue(false);
           const response = await axios.post('https://treeview-pcif.onrender.com/data', data); 
           console.log(response);         
         }
@@ -26,11 +28,18 @@ const App: React.FC = () => {
         reader.readAsText(file, 'utf-8');
   };
 
+  const handleReset = () => {
+    setInputValue(true);
+  };
+
 
   return (
     <div>
       <h1>Tree View</h1>
-      <FileUpload onFileUpload={handleFileUpload} />
+      <div className='btns'>
+      {view ? <FileUpload onFileUpload={handleFileUpload} /> : 
+      (<button onClick={handleReset}>Upload again</button>)}
+      </div>
       {jsonData && <HierarchicalTreeView treeData={jsonData} />}
     </div>
   );

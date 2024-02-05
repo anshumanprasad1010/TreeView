@@ -14,16 +14,12 @@ const FileUpload: React.FC<FileUploaderProps> = ({ onFileUpload }) => {
   };
 
   return (
-    <div style={dropzoneStyles}>
+      <div>
       <input type="file" accept=".json" onChange={handleFileChange} />
       <p>Choose a .json file to upload</p>
-    </div>
+      </div>
   );
 };
 
-const dropzoneStyles: React.CSSProperties = {
-  textAlign: 'center',
-  padding: '20px',
-};
 
 export default FileUpload;

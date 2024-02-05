@@ -2,6 +2,11 @@ h1 {
   text-align: center;
 }
 
+.btns {
+  text-align: center;
+  padding: 20px;
+}
+
 .tree-view {
   position: relative;
   left: 10px;
