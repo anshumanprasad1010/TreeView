@@ -1,3 +1,13 @@
+# Run frontend
+
+  cd react-d3-tree-app 
+
+  npm i 
+
+  npm start
+
+
+
 # Sample JSON file structure 
 
 [
@@ -28,3 +38,4 @@
       }
 
 ]
+
