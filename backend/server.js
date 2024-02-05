@@ -28,7 +28,7 @@ let treeSchema = new Schema({
   childrenNames: [{type: String}],
 });
 
-const Tree = mongoose.model("family", treeSchema);
+const Tree = mongoose.model("node", treeSchema);
 
 app.post('/data', async (req, res) => {
   try {

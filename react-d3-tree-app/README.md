@@ -7,6 +7,9 @@
   npm start
 
 
+# Deployed On Vercel
+
+  https://tree-view-seven.vercel.app/ 
 
 # Sample JSON file structure 
 
@@ -39,7 +42,4 @@
 
 ]
 
-# Deployed On Vercel
-
-    https://tree-view-seven.vercel.app/
 

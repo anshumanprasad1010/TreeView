@@ -6,6 +6,26 @@
 
    Used Node and Mongoose to store Tree data in MongoDB at the backend  
 
+# Run frontend
+
+  cd react-d3-tree-app 
+
+  npm i 
+
+  npm start
+
+# Run backend 
+ 
+ cd backend
+
+ npm i
+
+ node server.js
+
+
+# Deployed On Vercel
+
+  https://tree-view-seven.vercel.app/ 
 
 # Sample JSON file structure 
 
@@ -37,3 +57,5 @@
       }
 
 ]
+
+
