@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import FileUpload from './components/FileUpload';
 import './App.css';
-import HierarchicalTreeView from './components/HierarchyTreeView';
+import TreeView from './components/TreeView';
 import axios from 'axios';
 
 const App: React.FC = () => {
 
   const [jsonData, setJsonData] = useState<any|null>(null);
-  const [view, setInputValue] = useState(true);
+  const [view, setView] = useState(true);
 
      const handleFileUpload = (file: File) => {
       const reader = new FileReader();
@@ -17,7 +17,7 @@ const App: React.FC = () => {
           {
           const data = JSON.parse(e.target.result);
           setJsonData(data);
-          setInputValue(false);
+          setView(false);
           const response = await axios.post('https://treeview-pcif.onrender.com/data', data); 
           console.log(response);         
         }
@@ -29,18 +29,18 @@ const App: React.FC = () => {
   };
 
   const handleReset = () => {
-    setInputValue(true);
+    setView(true);
   };
 
 
   return (
     <div>
-      <h1>Tree View</h1>
+      <h3>Tree View</h3>
       <div className='btns'>
       {view ? <FileUpload onFileUpload={handleFileUpload} /> : 
       (<button onClick={handleReset}>Upload again</button>)}
       </div>
-      {jsonData && <HierarchicalTreeView treeData={jsonData} />}
+      {jsonData && <TreeView data={jsonData} />}
     </div>
   );
 };
